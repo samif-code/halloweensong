@@ -37,6 +37,15 @@ public class Halloween {
    
     public static int getUserInt() {
         while (!sc.hasNextInt()) {
+            if (sc.hasNext()) {
+                int i = sc.nextInt();
+                if (i > 0 ) {
+                    return i;
+                } else {
+                    System.out.println("Please enter a positive integer.");
+                    return getUserInt();
+                }
+            }
             System.out.println("Please enter a valid integer.");
             sc.next(); // discard the invalid input
         }
@@ -54,10 +63,10 @@ public class Halloween {
     public void singSong() {
         System.out.println("OK! I've made you a song to celebrate halloween!");
 
-        System.out.println("On day 0 of halloween my true love gave to me: ");
+        System.out.println("On day 1 of halloween my true love gave to me: ");
         System.out.println("a " + gifts[0] + "!");
         for (int d = 1; d < days; d++) {
-            System.out.println("On day " + (d + 1) + " of halloween my true love gave to me:");
+            System.out.println("On day " + (d +1) + " of halloween my true love gave to me:");
             // iterative solution
             // System.out.println(gifts[d] + ",");
             // for (int e = d - 1; e >= 0; e--) {
